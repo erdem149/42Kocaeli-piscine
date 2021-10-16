@@ -1,0 +1,5 @@
+Credentials cache: API:D8258870-35D4-47B0-A5A9-CAA094452A6A
+        Principal: eryilmaz@42KOCAELI.COM.TR
+
+  Issued                Expires               Principal
+Sep 30 15:12:33 2021  Oct  1 01:12:33 2021  krbtgt/42KOCAELI.COM.TR@42KOCAELI.COM.TR
