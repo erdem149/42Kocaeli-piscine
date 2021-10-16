@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 14:11:01 by eryilmaz          #+#    #+#             */
-/*   Updated: 2021/10/16 16:43:32 by eryilmaz         ###   ########.tr       */
+/*   Created: 2021/10/05 11:11:59 by eryilmaz          #+#    #+#             */
+/*   Updated: 2021/10/05 14:07:32 by eryilmaz         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
+#include <unistd.h>
 
-	i = 0;
-	while (s1[i] == s2[i])
+void	ft_putchar(char a)
+{
+	write(1, &a, 1);
+}
+
+void	ft_putnbr(int s)
+{
+	if (s == -2147483648)
 	{
-		if (s1[i] == '\0' || s2[i] == '\0')
-		{
-			return (0);
-		}
-		i++;
+		write(1, "-2147483648", 11);
 	}
-	return (s1[i] - s2[i]);
+	else if (s < 0)
+	{
+		ft_putchar('-');
+		ft_putnbr(s = -1 * s);
+	}
+    else
+    {
+      if(s > 9)
+		ft_putnbr(s / 10);
+	 ft_putchar(s % 10 + '0');
+        
+    }
+}
+ int main ()
+{
+    ft_putnbr(-21);
 }

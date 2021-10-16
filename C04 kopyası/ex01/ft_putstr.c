@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 14:11:01 by eryilmaz          #+#    #+#             */
-/*   Updated: 2021/10/16 16:43:32 by eryilmaz         ###   ########.tr       */
+/*   Created: 2021/10/08 11:56:46 by eryilmaz          #+#    #+#             */
+/*   Updated: 2021/10/10 12:21:16 by eryilmaz         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-int	ft_strcmp(char *s1, char *s2)
+void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (s1[i] == s2[i])
+	while (str[i] != '\0')
 	{
-		if (s1[i] == '\0' || s2[i] == '\0')
-		{
-			return (0);
-		}
+		write(1, &str[i], 1);
 		i++;
 	}
-	return (s1[i] - s2[i]);
 }
