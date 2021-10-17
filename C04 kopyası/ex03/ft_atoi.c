@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/05 11:11:59 by eryilmaz          #+#    #+#             */
-/*   Updated: 2021/10/05 14:07:32 by eryilmaz         ###   ########.tr       */
+/*   Created: 2021/10/17 15:05:00 by eryilmaz          #+#    #+#             */
+/*   Updated: 2021/10/17 15:46:03 by eryilmaz         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	ft_atoi(char *str)
 {
-	write(1, &c, 1);
-}
+	int	d;
+	int	s;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
+	d = 1;
+	s = 0;
+	while (*str == '\t' || *str == '\n' || *str == '\v'
+		|| *str == '\f' || *str == '\r' || *str == ' ')
+		str++;
+	while (*str == '-' || *str == '+')
 	{
-		ft_putnbr(nb / 10);
-		ft_putchar('8');
+		if (*str == '-')
+		{
+			d = d * -1;
+			str++;
+		}
+		else
+			str++;
 	}
-	else if (nb < 0)
+	while (*str >= '0' && *str <= '9')
 	{
-		nb = -nb;
-		ft_putchar('-');
-		ft_putnbr(nb);
+		s = (s * 10) + (*str - '0');
+		str++;
 	}
-	else if (nb < 10)
-	{
-		ft_putchar(nb + 48);
-	}
-	else
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
+	return (s * d);
 }
