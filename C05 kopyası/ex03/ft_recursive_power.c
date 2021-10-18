@@ -6,7 +6,7 @@
 /*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 11:54:02 by eryilmaz          #+#    #+#             */
-/*   Updated: 2021/10/18 11:54:48 by eryilmaz         ###   ########.tr       */
+/*   Updated: 2021/10/18 19:03:39 by eryilmaz         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_recursive_power(int nb, int power)
 		return (nb * ft_recursive_power(nb, power - 1));
 	else if (power == 0 && nb == 0)
 		return (1);
-	else
+	else if (power == 0)
 		return (1);
+	else
+		return (0);
 }
