@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 13:49:07 by eryilmaz          #+#    #+#             */
-/*   Updated: 2021/10/18 13:50:01 by eryilmaz         ###   ########.tr       */
+/*   Created: 2021/10/18 15:49:25 by eryilmaz          #+#    #+#             */
+/*   Updated: 2021/10/18 15:50:42 by eryilmaz         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_fibonacci(int index)
+int	ft_is_prime(int nb)
 {
-	if (index <= 1)
-		return (index);
-	else
-		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	int	i;
+	int	a;
+
+	i = 2;
+	a = 0;
+	if (nb <= 1)
+		return (2);
+	while (i <= nb)
+	{
+		if (nb % i == 0)
+			a++;
+		i++;
+	}
+	if (a == 1)
+		return (1);
+	return (0);
 }

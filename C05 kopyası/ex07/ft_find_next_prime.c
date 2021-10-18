@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eryilmaz <eryilmaz@student.42kocaeli.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 13:49:07 by eryilmaz          #+#    #+#             */
-/*   Updated: 2021/10/18 13:50:01 by eryilmaz         ###   ########.tr       */
+/*   Created: 2021/10/18 16:47:57 by eryilmaz          #+#    #+#             */
+/*   Updated: 2021/10/18 16:48:45 by eryilmaz         ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_fibonacci(int index)
+int	ft_find_next_prime(int nb)
 {
-	if (index <= 1)
-		return (index);
-	else
-		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	int	i;
+
+	i = 2;
+	if (nb <= 2)
+		return (2);
+	while (nb > i)
+	{
+		if (nb % i == 0)
+		{
+			nb++;
+			i = 2;
+		}
+		i++;
+	}
+	return (nb);
 }
