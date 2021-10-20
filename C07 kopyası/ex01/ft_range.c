@@ -29,7 +29,7 @@ int	*ft_range(int min, int max)
 		i1++;
 		i2++;
 	}
-	d = (int *)malloc(i1);
+	d = (int *)malloc(i1 * sizeof(int));
 	while (min < max)
 	{
 		d[i] = min;
